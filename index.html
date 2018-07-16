@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>paint</title>
+</head>
+<body>
+  <p>
+      <label id="import_button_label" class="button" for="import_button">import</label>
+      <input id="import_button" type="file">
+  </p>
+
+  <p>
+    <input id="export_button" class="button" type="button" value="export">
+  </p>
+
+  <p>
+    <input id="create_new_button" class="button" type="button" value="create new">
+  </p>
+
+  <p>
+    <input id="back_button" class="button" type="button" value="back">
+    <input id="forward_button" class="button" type="button" value="forward">
+  </p>
+
+  <div id="tools_wrap">
+
+    <div id="color_picker"></div>
+    <div id="brush_size_editor"></div>
+
+    <select id="tool_selector">
+      <option value="free_line">free line</option>
+      <option value="straight_line">straight line</option>
+      <option value="eraser">eraser</option>
+      <option value="fill">fill</option>
+    </select>
+
+    <div class="slider">
+      <input id="zoom_slider" type="range" value="100" min = '10' max="300">
+    </div>
+
+  </div>
+
+
+  <div id="canvas_frame"></div>
+
+
+
+  <script type="text/javascript" src="js/free_line_operation.js"></script>
+  <script type="text/javascript" src="js/straight_line_operation.js"></script>
+  <script type="text/javascript" src="js/eraser_operation.js"></script>
+  <script type="text/javascript" src="js/fill_operation.js"></script>
+
+  <script type="text/javascript" src="js/draw_history.js"></script>
+  <script type="text/javascript" src="js/brush_size_editor.js"></script>
+  <script type="text/javascript" src="js/color_picker.js"></script>
+  <script type="text/javascript" src="js/paint_tool.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
