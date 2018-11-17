@@ -11,9 +11,23 @@
     paintTool = new PaintTool(document.getElementById('canvas_frame'),colorPicker,brushSizeEditor);
   })();
 
+  /*change text
+  -------------------------------------------------*/
+  document.getElementById('draw_text').addEventListener('change',function(e){
+    paintTool.drawText = e.target.value;
+  });
+
   /*zoom
   -------------------------------------------------*/
+  document.getElementById('zoom_value').addEventListener('change',function(e){
+    var value = Math.max(10,Math.min(300,e.target.value));
+
+    document.getElementById('zoom_value').value = value;
+    document.getElementById('zoom_slider').value = value;
+    paintTool.setScale(e.target.value / 100);
+  });
   document.getElementById('zoom_slider').addEventListener('change',function(e){
+    document.getElementById('zoom_value').value = e.target.value;
     paintTool.setScale(e.target.value / 100);
   });
 
@@ -60,7 +74,7 @@
   /*create New
   -------------------------------------------------*/
   document.getElementById('create_new_button').addEventListener('click',function(e){
-    var size = window.prompt('please enter new image size','h=1000 w=1600');
+    var size = window.prompt('please enter new image size','h=600 w=800');
     if(size == null)return;
 
     var res = size.match(/h=([0-9]+)\s*w=([0-9]+)/);
