@@ -2,4 +2,4 @@
 
 simple paint tool  
 
-https://mory0.github.io/paint/
+https://mo-ryo.github.io/paint/
