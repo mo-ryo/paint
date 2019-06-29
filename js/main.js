@@ -74,7 +74,7 @@
   /*create New
   -------------------------------------------------*/
   document.getElementById('create_new_button').addEventListener('click',function(e){
-    var size = window.prompt('please enter new image size','h=600 w=800');
+    var size = window.prompt('please enter new image size','h=900 w=900');
     if(size == null)return;
 
     var res = size.match(/h=([0-9]+)\s*w=([0-9]+)/);

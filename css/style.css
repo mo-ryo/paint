@@ -33,6 +33,9 @@ body,html{
 }
 
 #canvas_frame{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 5%;
   height: 80%;
   width: auto;

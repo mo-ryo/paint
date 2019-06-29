@@ -23,7 +23,7 @@ var PaintTool = (function () {
     this.drawText = 'text';
 
     this.initEventListener();
-    this.createNewImg(1600, 1000);
+    this.createNewImg(900, 900);
   }
 
   PaintTool.prototype.createNewImg = function (w, h) {
@@ -184,6 +184,17 @@ var PaintTool = (function () {
 
     this.displayCanvas.addEventListener('contextmenu', (e) => {
       e.preventDefault();
+    });
+
+    this.displayCanvas.addEventListener('mouseout', (e) => {
+      if (this.paintOperation !== null) {
+        var p = this.canvasPosToImgPos(e.clientX, e.clientY);
+
+        this.paintOperation.end(p.x, p.y);
+        this.drawHistory.add(this.paintOperation);
+        this.paintOperation = null;
+        this.drawCanvas();
+      }
     });
   }
 
